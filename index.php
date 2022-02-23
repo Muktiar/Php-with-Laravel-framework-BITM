@@ -1,18 +1,18 @@
 
 <?php
     echo "hello bitm";
-
+echo "<br>";
 ?>
-<div></div>
 <?php
  $cmnt="hi";
     echo $cmnt;
+echo "<br>";
 
 ?>
-<div></div>
 <?php
 $cmnt2="hello world!";
 echo $cmnt2;
+echo "<br>";
 ?>
 
 <?php
@@ -20,6 +20,7 @@ echo"<h2> Single Quotes</h2>";
 echo"<h3> Example 1.</h3>";
 $str='hello text within single quote';
 echo $str;
+echo "<br>";
 ?>
 <?php
 echo "<br>";
@@ -104,8 +105,7 @@ echo "<br>";
 ?>
  <?php
 echo"<h3>  Example 3.</h3>";
-$x=(7+5)*7;
-
+$x=(7+5)*9;
 echo $x."\n";
 ?>
 
