@@ -12,8 +12,8 @@ echo "<h2>Example 2</h2>>";
 $pizza  = "piece1 piece2 piece3 piece4 piece5 piece6";
 $pieces = explode(' p', $pizza);
 echo "<pre>";
-print_r($pieces);
 echo "</pre>";
+print_r($pieces);
 echo"<br>";
 
 echo "<h2>Example 3</h2>";
@@ -26,7 +26,7 @@ echo"<br>";
 
 echo "<h2>Example 4 </h2>";
 $date1="2022/02/24";
-$date_parts1=explode('-', $date1);
+$date_parts1=explode('/', $date1);
 echo "Year: " .$date_parts1[1]. " ";
 echo "Month: " .$date_parts1[2]. " ";
 echo "Date: " .$date_parts1[3]. "";

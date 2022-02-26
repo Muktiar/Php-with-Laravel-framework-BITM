@@ -162,7 +162,7 @@ echo "<br>";
 $a=45;
 $b=0;
 if ($a && $b){
-    echo"test1 <br>";
+    echo"test1 <br>";                                             
 }
 else{
     echo "test2 <br>";
