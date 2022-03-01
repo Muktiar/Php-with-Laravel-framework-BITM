@@ -1,0 +1,21 @@
+@import url(bootstrap.min.css);
+@import url(all.min.css);
+
+.bg-light  {
+    background-color: #4a4a4a !important;
+}
+header .navbar-light .navbar-nav .nav-link{
+color: #fff;
+font-size: 0.75em;
+    letter-spacing: 0.06rem;
+    padding-right: 0.55rem;
+    padding-left: 0.55rem;
+}
+
+header .navbar-light .navbar-nav .nav-link.active{
+    color: #ff2bf1;
+}
+
+header .navbar-light .navbar-nav .nav-link:hover{
+    color: #ff2bf1;
+}
