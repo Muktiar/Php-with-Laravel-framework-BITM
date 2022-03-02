@@ -13,9 +13,9 @@ font-size: 0.75em;
 }
 
 header .navbar-light .navbar-nav .nav-link.active{
+    font-size: 0.75em;
     color: #ff2bf1;
 }
-
 header .navbar-light .navbar-nav .nav-link:hover{
     color: #ff2bf1;
 }
