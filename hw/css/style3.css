@@ -105,15 +105,15 @@ header .top-header .container .row .justify-content-end a.nav-link{
     border-left: 1px solid #efefef;
     
 }
-header .top-header .container .row .justify-content-end a.nav-link .fa-solid .fas{
-    display: inline-block;
-    color: white;
-    font-size: 10px;
-    font-weight: 600;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 11px 10px 11px 10px;
-    border-left: 1px solid #efefef;
+
+header .top-header .container .row .justify-content-end a.nav-link:hover{
     
+    color: #ff2bf1;
+    
+    
+}
+
+header .top-header .container .row .justify-content-end a.nav-link .fa-solid {
+    display: inline-block;
+    color: white;  
 }
