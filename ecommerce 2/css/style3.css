@@ -5,26 +5,12 @@
     background-color: #4a4a4a !important;
 }
 header .navbar-light .navbar-nav .nav-link{
-color: #fff;
-font-size: 0.75em;
+    color: #fff;
+    font-size: 0.75em;
     letter-spacing: 0.06rem;
     padding-right: 0.55rem;
     padding-left: 0.55rem;
 }
-header  .nav-link{
-   text-decoration: none;
-    display: inline-block;
-    color: #858585;
-    font-size: 0.6rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 10px 10px 10px 10px;
-
-
-}
-
-
 
 header .navbar-light .navbar-nav .nav-link.active{
     color: #ff2bf1;
@@ -43,13 +29,13 @@ header .navbar-light .navbar-nav .nav-link:hover{
     letter-spacing: 0.5px;
 }
 #best-seller  .col .card a:hover{
-color: #f28083;
+    color: #f28083;
 }
 #best-seller  .col .card .card-text{
     color: rgba(0, 0, 0, 0.17);
 }
 #best-seller  .col .card .card-text .fa-star:hover{
-    color: rgba(255, 250, 10, 0.87);
+    color: rgba(49, 152, 23, 0.87);
 }
 #best-seller  .col .card .price{
     color: #ff1f2b;
@@ -59,7 +45,7 @@ color: #f28083;
 }
 #best-seller  .col .card .price del{
     margin-right: 0.4rem;
-    color: #ff1f2b;
+    color: black;
     font-size: 0.85rem;
     font-weight: normal;
 
