@@ -13,6 +13,30 @@ font-size: 0.75em;
     padding-right: 0.55rem;
     padding-left: 0.55rem;
 }
+header  .nav-link{
+   text-decoration: none;
+    display: inline-block;
+    color: #858585;
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 10px 10px 10px 10px;
+}
+
+header .top-header .form-select{
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    -moz-padding-start: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    background-color: #fef6ff;
+    background-image:none ;
+    border: none;
+    border-radius: 0;
+    transition: none;
+}
 
 header .navbar-light .navbar-nav .nav-link.active{
     font-size: 0.75em;
@@ -40,7 +64,7 @@ color: #f28083;
 }
 
 #best-seller  .col .card .card-text .fa-star:hover{
-    color: rgba(49, 152, 23, 0.87);
+    color: rgba(255, 250, 10, 0.87);
 }
 
 #best-seller  .col .card .price{
