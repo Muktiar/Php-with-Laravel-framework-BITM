@@ -1,9 +1,11 @@
 @import url(bootstrap.min.css);
 @import url(all.min.css);
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 .bg-light  {
     background-color: #4a4a4a !important;
 }
+
 header .navbar-light .navbar-nav .nav-link{
 color: #fff;
 font-size: 0.75em;
@@ -27,9 +29,9 @@ header  .nav-link{
 
 
 header .navbar-light .navbar-nav .nav-link.active{
+    font-size: 0.75em;
     color: #ff2bf1;
 }
-
 header .navbar-light .navbar-nav .nav-link:hover{
     color: #ff2bf1;
 }
@@ -42,25 +44,30 @@ header .navbar-light .navbar-nav .nav-link:hover{
     font-family: 'PT Sans',"sans-serif";
     letter-spacing: 0.5px;
 }
+
 #best-seller  .col .card a:hover{
 color: #f28083;
 }
+
 #best-seller  .col .card .card-text{
     color: rgba(0, 0, 0, 0.17);
 }
+
 #best-seller  .col .card .card-text .fa-star:hover{
     color: rgba(255, 250, 10, 0.87);
 }
+
 #best-seller  .col .card .price{
     color: #ff1f2b;
     font-weight: bold;
     font-size: 0.9rem;
 
 }
+
 #best-seller  .col .card .price del{
     margin-right: 0.4rem;
     color: #ff1f2b;
     font-size: 0.85rem;
-    font-weight: normal;
+    font-weight: bold;
 
 }

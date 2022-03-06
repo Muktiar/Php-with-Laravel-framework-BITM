@@ -1,0 +1,119 @@
+@import url(bootstrap.min.css);
+@import url(all.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+.bg-light  {
+    background-color: #4a4a4a !important;
+}
+header .bg-light:hover {
+    color: #f0b6b6;
+}
+
+header .navbar-light .navbar-nav .nav-link{
+color: #fff;
+font-size: 0.75em;
+    letter-spacing: 0.06rem;
+    padding-right: 0.55rem;
+    padding-left: 0.55rem;
+}
+
+header .navbar-light .navbar-nav .nav-link.active{
+    font-size: 0.75em;
+    color: #ff2bf1;
+}
+header .navbar-light .navbar-nav .nav-link:hover{
+    color: #ff2bf1;
+}
+/*style for best seller*/
+#best-seller  .col .card a {
+    color: #000000;
+    text-decoration:none ;
+    font-size: 0.20rem;
+    font-weight: normal;
+    font-family: 'PT Sans',"sans-serif";
+    letter-spacing: 0.5px;
+}
+
+#best-seller  .col .card a:hover{
+color: #f28083;
+}
+
+#best-seller  .col .card .card-text{
+    color: rgba(0, 0, 0, 0.17);
+}
+
+#best-seller  .col .card .card-text .fa-star:hover{
+    color: rgba(49, 152, 23, 0.87);
+}
+
+#best-seller  .col .card .price{
+    color: #ff1f2b;
+    font-weight: bold;
+    font-size: 0.9rem;
+
+}
+
+#best-seller  .col .card .price del{
+    margin-right: 0.4rem;
+    color: #ff1f2b;
+    font-size: 0.85rem;
+    font-weight: bold;
+
+}
+header .top-header{
+    background-color: #4e4e4e;
+} 
+header .top-header:hover{
+    background-color: #e1ee26;
+} 
+header .top-header .container{
+    padding: 8px 2px 8px 2px ;
+} 
+header .top-header .container .row .col-sm-2 .wc-msg{
+    font-weight: 600;
+    color: black;
+    font-size: 12px;
+    font-style: italic;
+    padding: 8px 1px 8px 1px;
+}
+
+header .top-header .container .row .col-sm-1 .language .form-select{
+    font-weight: 600;
+    padding: 8px 1px 8px 1px;
+    font-size: 12px;
+    color:black;
+    
+}
+
+header .top-header .container .row .col-sm-1 .currency .form-select{
+    font-weight: 600;
+    padding: 8px 4px 8px 4px;
+    font-size: 12px;
+    color:#080808;
+  
+    }
+
+header .top-header .container .row .justify-content-end a.nav-link{
+    display: inline-block;
+    color: black;
+    font-size: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 11px 10px 11px 10px;
+    border-left: 1px solid #efefef;
+    
+}
+
+header .top-header .container .row .justify-content-end a.nav-link:hover{
+    
+    color: #ff2bf1;
+    
+    
+}
+
+header .top-header .container .row .justify-content-end a.nav-link .fa-solid {
+    display: inline-block;
+    color: white;  
+}
