@@ -117,3 +117,8 @@ header .top-header .container .row .justify-content-end a.nav-link .fa-solid {
     display: inline-block;
     color: white;  
 }
+
+header .top-header .container .row .justify-content-end a.nav-link .fa-solid:hover {
+    display: inline-block;
+    color: rgb(9, 25, 246);  
+}
