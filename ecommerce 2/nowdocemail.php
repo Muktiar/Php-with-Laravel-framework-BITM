@@ -1,5 +1,6 @@
 <?php
-echo <<<
+$str=<<<ABCD
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,5 +41,7 @@ echo <<<
 </center>
 </body>
 </html>
-str;
+
 ?>
+ABCD;
+echo $str;
