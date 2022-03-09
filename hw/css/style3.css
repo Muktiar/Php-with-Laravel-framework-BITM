@@ -33,7 +33,11 @@ header .navbar-light .navbar-nav .nav-link:hover{
     font-family: 'PT Sans',"sans-serif";
     letter-spacing: 0.5px;
 }
-
+header .top-header{
+    margin-top: 0px;
+    border-bottom: inset;
+    border-radius: 2px;
+}
 #best-seller  .col .card a:hover{
 color: #f28083;
 }
@@ -76,6 +80,13 @@ header .top-header .container .row .col-sm-2 .wc-msg{
     font-style: italic;
     padding: 8px 1px 8px 1px;
 }
+header .top-header .container .row .col-sm-2 .wc-msg:hover{
+    font-weight: 600;
+    color: black;
+    font-size: 20px;
+    font-style: italic;
+    padding: 8px 1px 8px 1px;
+}
 
 header .top-header .container .row .col-sm-1 .language .form-select{
     font-weight: 600;
@@ -85,10 +96,26 @@ header .top-header .container .row .col-sm-1 .language .form-select{
     
 }
 
-header .top-header .container .row .col-sm-1 .currency .form-select{
+header .top-header .container .row .col-sm-1 .language .form-select:hover{
     font-weight: 600;
-    padding: 8px 4px 8px 4px;
+    padding: 8px 0.5px 8px 0.5px;
+    font-size: 20px;
+    color:black;
+
+}
+
+header .top-header .container .row .col-sm-1 .language .form-select{
+    font-weight: 600;
+    padding: 8px 1px 8px 1px;
     font-size: 12px;
+    color:black;
+
+}
+
+header .top-header .container .row .col-sm-1 .currency .form-select:hover{
+    font-weight: 600;
+    padding: 8px 1px 8px 1px;
+    font-size: 20px;
     color:#080808;
   
     }
@@ -107,8 +134,8 @@ header .top-header .container .row .justify-content-end a.nav-link{
 }
 
 header .top-header .container .row .justify-content-end a.nav-link:hover{
-    
-    color: #ff2bf1;
+    font-size:20px;
+    color: #3179ff;
     
     
 }
@@ -122,3 +149,73 @@ header .top-header .container .row .justify-content-end a.nav-link .fa-solid:hov
     display: inline-block;
     color: rgb(9, 25, 246);  
 }
+header .second-top-header .container .row .block-company-wrapper .block-company-inner li a{
+    padding: 10px 7px 7px 7px;
+    height: 15px;
+    display: block;
+    bottom: -1px;
+    z-index: 1000;
+    position: relative;
+    color: #858585;
+    border-top: solid 1px transparent;
+    border-left: solid 1px transparent;
+    border-right: solid 1px transparent;
+    position: relative;
+    text-decoration: none;
+}
+#search {
+    margin: 0;
+    width: 80%;
+    font-size: 13px;
+    height: 38px;
+    color: #999;
+    padding: 0 20px;
+    background: none;
+    outline: none;
+    border: none;
+    margin-bottom: 10px;
+}
+
+   header .second-top-header .container .row .search-box {
+        right: 0px;
+        background: #f6f6f6;
+        border-radius: 0px;
+        margin: 23px 0px 15px 0px;
+        border: 1px #d7d7d7 solid;
+        width: 35%;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        float: right;
+    }
+header .second-top-header .container .row .submit-button-search-header .btn .btn-default .search-btn-bg{
+
+    cursor: pointer;
+    display: inline-block;
+    background: none !important;
+    position: absolute;
+    outline: none;
+    box-shadow: none;
+    border: none !important;
+    height: 40px;
+    right: 0px;
+    font-size: 18px;
+    border-left: 1px #eaeaea solid !important;
+    padding-left: 14px;
+    width: 45px;
+
+}
+
+header .second-top-header .container .row .submit-button-search-header .btn .btn-default .search-btn-bg .glyphicon .glyphicon-search{
+
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
