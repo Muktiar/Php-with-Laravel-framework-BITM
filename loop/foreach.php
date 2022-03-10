@@ -30,9 +30,11 @@ foreach ($students as $student){
        'item2'=>'charge',
        'item3'=>'cable'
    ];
+   echo '<ol>';
     foreach ($items as $item){
         echo '<li>'.$item .'</li>';
     }
+    echo '</ol>';
     echo '<br>';
     $names=[
         'firstname'=>'Jhon',
