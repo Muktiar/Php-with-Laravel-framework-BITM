@@ -49,7 +49,7 @@ $a=<<<AB
         </tr>
 
         <tr>
-            <td align="center" ><u>Unsubcribe</u> for our email</td>
+            <td align="center" ><u style="color: red">Unsubscribe</u> for our email</td>
 
         </tr>
     </table>

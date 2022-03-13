@@ -163,6 +163,18 @@ header .second-top-header .container .row .block-company-wrapper .block-company-
     position: relative;
     text-decoration: none;
 }
+.search-box {
+    right: 0px;
+    background: #f6f6f6;
+    border-radius: 0px;
+    margin: 23px 0px 15px 0px;
+    border: 1px #d7d7d7 solid;
+    width: 35%;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    float: right;
+}
 #search {
     margin: 0;
     width: 80%;
@@ -173,23 +185,8 @@ header .second-top-header .container .row .block-company-wrapper .block-company-
     background: none;
     outline: none;
     border: none;
-    margin-bottom: 10px;
 }
-
-   header .second-top-header .container .row .search-box {
-        right: 0px;
-        background: #f6f6f6;
-        border-radius: 0px;
-        margin: 23px 0px 15px 0px;
-        border: 1px #d7d7d7 solid;
-        width: 35%;
-        overflow: hidden;
-        position: relative;
-        display: inline-block;
-        float: right;
-    }
-header .second-top-header .container .row .submit-button-search-header .btn .btn-default .search-btn-bg{
-
+.search-btn-bg {
     cursor: pointer;
     display: inline-block;
     background: none !important;
@@ -203,11 +200,9 @@ header .second-top-header .container .row .submit-button-search-header .btn .btn
     border-left: 1px #eaeaea solid !important;
     padding-left: 14px;
     width: 45px;
-
 }
 
-header .second-top-header .container .row .submit-button-search-header .btn .btn-default .search-btn-bg .glyphicon .glyphicon-search{
-
+.glyphicon {
     position: relative;
     top: 1px;
     display: inline-block;
@@ -219,3 +214,20 @@ header .second-top-header .container .row .submit-button-search-header .btn .btn
     -moz-osx-font-smoothing: grayscale;
 }
 
+.search-btn-bg .glyphicon-search:before {
+    font-size: 14px;
+    color: #c3c4c4;
+}
+.search-btn-bg:hover {
+    color: #cf3341;
+}
+.glyphicon-search:before {
+    font-size: 12px;
+}
+.search-btn-bg {
+    position: absolute;
+    padding: 6px 3px;
+}
+.fa-magnifying-glass{
+    color: dimgrey;
+}
