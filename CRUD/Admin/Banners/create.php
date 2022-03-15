@@ -15,22 +15,25 @@
   <body>
     <section>
         <div class="container">
-            <div class="row justify-content-center">
+            <div  class="row justify-content-center">
+                <div class="container">
                 <h1 class="text-center"> ADD New</h1>
                 <form method="post" action="store.php">
                     <div class="mb-3 row">
                         <label for="title" class="col-sm-2 col-form-label">Title</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-8">
                             <input type="text" class="form-control" id="title" name="title" value=" ">
                         </div>
                     </div>
-                    <div class="mb-3 row">
-                        <label for="detail" class="col-sm-2 col-form-label">Detail</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="detail" name="detail" value=" ">
-                        </div>
-                    </div>
+<!--                    <div class="mb-3 row">-->
+<!--                        <label for="detail" class="col-sm-2 col-form-label">Detail</label>-->
+<!--                        <div class="col-sm-8">-->
+<!--                            <input type="text" class="form-control" id="detail" name="detail" value=" ">-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <button type="submit" class="btn btn-primary"> Submit</button>
                 </form>
+            </div>
             </div>
         </div>
     </section>
