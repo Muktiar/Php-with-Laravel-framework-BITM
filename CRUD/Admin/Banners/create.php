@@ -25,13 +25,7 @@
                             <input type="text" class="form-control" id="title" name="title" value=" ">
                         </div>
                     </div>
-<!--                    <div class="mb-3 row">-->
-<!--                        <label for="detail" class="col-sm-2 col-form-label">Detail</label>-->
-<!--                        <div class="col-sm-8">-->
-<!--                            <input type="text" class="form-control" id="detail" name="detail" value=" ">-->
-<!--                        </div>-->
-<!--                    </div>-->
-                    <button type="submit" class="btn btn-primary"> Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
             </div>
