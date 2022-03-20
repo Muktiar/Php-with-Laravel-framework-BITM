@@ -1,0 +1,9 @@
+.table-bordered{
+    
+    text-align: center;
+    color: blue;
+    background-color: rgb(158, 114, 199);
+    border-color: black;
+    border-inline-color: white;
+    border-inline-end-color: white;
+}
