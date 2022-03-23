@@ -1,29 +1,25 @@
 <?php
-$_id=$_GET['id'];
-
+$_id = $_GET['id'];
 $servername = "localhost";
 $username = "root";
 $password = "";
 
 
-$conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
+$conn = new PDO("mysql:host=$servername;dbname=ecommnerce302713", $username, $password);
 // set the PDO error mode to exception
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-$query="SELECT * FROM `banners` WHERE id=:id";
+$query="SELECT * FROM `labels`WHERE `id`=$_id";
 $stmt=$conn->prepare($query);
-$stmt->bindParam(':id',$_id);
 $result=$stmt->execute();
-$banner= $stmt->fetch();
-echo '<br>';
+$labels= $stmt->fetch();
 //echo '<pre>';
 //print_r($banners);
 //echo '</pre>';
-//var_dump($banner);
+////var_dump($banners);
 
-//foreach ($banners as $banner):
-//
-//endforeach;
+// foreach ($banners as $banner):
+
+//     endforeach;
 
 ?>
 <!doctype html>
@@ -36,35 +32,32 @@ echo '<br>';
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Show</title>
+    <title>Banners List</title>
 </head>
 <body>
-
 <section>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-sm-6">
-                <h1 class="text-center mb-4"> Show</h1>
-                <dl class="row">
-                    <dt class="col-sm-3">ID</dt>
-                    <dd class="col-sm-9"><?= $banner['id'];?></dd>
-                    <dt class="col-sm-3">Title</dt>
-                    <dd class="col-sm-9"><?= $banner['title'];?></dd>
-                    <dt class="col-sm-3">Description</dt>
-                    <dd class="col-sm-9"><?= $banner['description'];?></dd>
-
-
-                </dl>
-
+        <div  class="row justify-content-center">
+            <div class="container">
+                <h1 class="text-center"> Update </h1>
+                <form method="post" action="store.php">
+                    <div class="mb-3 row">
+                        <label for="title" class="col-sm-2 col-form-label">Title</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="title" name="title" value="<?=;?> ">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="picture" class="col-sm-2 col-form-label">Title</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="picture" name="picture" value=" ">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
-
-
-
-
-
         </div>
     </div>
-
 </section>
 
 <!-- Optional JavaScript; choose one of the two! -->
@@ -79,5 +72,3 @@ echo '<br>';
 -->
 </body>
 </html>
-
-

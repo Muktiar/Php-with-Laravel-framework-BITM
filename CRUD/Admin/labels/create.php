@@ -25,6 +25,12 @@
                             <input type="text" class="form-control" id="title" name="title" value=" ">
                         </div>
                     </div>
+                    <div class="mb-3 row">
+                        <label for="picture" class="col-sm-2 col-form-label">Title</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="picture" name="picture" value=" ">
+                        </div>
+                    </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
