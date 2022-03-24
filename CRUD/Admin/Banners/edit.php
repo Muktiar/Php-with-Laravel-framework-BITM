@@ -1,4 +1,6 @@
 <?php
+$webroot='http://localhost/muktiar/Php-with-Laravel-framework-BITM/CRUD';
+
 $_id=$_GET['id'];
 
 $servername = "localhost";
@@ -34,7 +36,7 @@ $banner= $stmt->fetch();
         <div  class="row justify-content-center">
             <div class="container">
                 <h1 class="text-center"> ADD New</h1>
-                <form method="post" action="update.php?id=<?= $banner['id']?>">
+                <form method="post" action="update.php?id=<?= $banner['id']?>"enctype="multipart/form-data">
                     <div class="mb-3 row">
                         <label for="title" class="col-sm-2 col-form-label">Title</label>
                         <div class="col-sm-8">
@@ -47,6 +49,18 @@ $banner= $stmt->fetch();
                             <textarea type="text" class="form-control" id="description" name="description" ><?= $banner['description'];?></textarea>
                         </div>
                     </div>
+                    <div class="mb-3 row">
+                        <label for="formFile" class="all-form-label">Picture</label>
+                        <div class="col-sm-6">
+                            <input type="file" class="form-control" id="formFile" name="picture" value=" <?= $banner['picture'];?>">
+                            <img src="<?=$webroot;?>/uploads/<?=$banner['picture'];?>">
+                            <input type="hidden" name="old_picture" value="<?=$banner['picture'];?>">
+
+                        </div>
+
+                    </div>
+
+
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>

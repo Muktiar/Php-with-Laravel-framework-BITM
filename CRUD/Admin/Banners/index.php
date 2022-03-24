@@ -56,6 +56,7 @@ foreach ($banners as $banner):
                     <tr>
 
                         <th scope="col">Title</th>
+
                         <th scope="col">Action</th>
                     </tr>
                     </thead>
@@ -68,6 +69,7 @@ foreach ($banners as $banner):
                     <tr>
 
                         <td><?= $banner['title'];?></td>
+
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic outlined example">
                                 <a href="show.php?id=<?= $banner['id'];?>">  <button type="button" class="btn  btn-outline-primary">Show</button></a>

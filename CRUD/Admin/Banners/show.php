@@ -1,4 +1,5 @@
 <?php
+$webroot='http://localhost/muktiar/Php-with-Laravel-framework-BITM/CRUD';
 $_id=$_GET['id'];
 
 $servername = "localhost";
@@ -52,6 +53,11 @@ echo '<br>';
                     <dd class="col-sm-9"><?= $banner['title'];?></dd>
                     <dt class="col-sm-3">Description</dt>
                     <dd class="col-sm-9"><?= $banner['description'];?></dd>
+                    <dt class="col-sm-3">Image's Name</dt>
+                    <dd class="col-sm-9">
+                        <?= $banner['picture'];?>
+                    <img src="<?=$webroot;?>/uploads/<?=$banner['picture'];?>">
+                    </dd>
 
 
                 </dl>
