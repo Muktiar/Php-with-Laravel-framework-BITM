@@ -8,18 +8,18 @@ $password = "";
 $conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
 // set the PDO error mode to exception
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$query="SELECT * FROM `banners`";
+$query="SELECT * FROM `labels`";
 $stmt=$conn->prepare($query);
 $result=$stmt->execute();
-$banners= $stmt->fetchAll();
+$labels= $stmt->fetchAll();
 //echo '<pre>';
-//print_r($banners);
+//print_r($labels);
 //echo '</pre>';
-////var_dump($banners);
+////var_dump($labels);
 
-foreach ($banners as $banner):
+// foreach ($labels as $label):
 
-    endforeach;
+//     endforeach;
 
 ?>
 <!doctype html>
@@ -32,7 +32,7 @@ foreach ($banners as $banner):
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Banners List</title>
+    <title>labels List</title>
 </head>
 <body>
 
@@ -51,18 +51,18 @@ foreach ($banners as $banner):
                     </thead>
                     <tbody>
                     <?php
-                    foreach ($banners as $banner):
+                    foreach ($labels as $label):
 
 
                     ?>
                     <tr>
 
-                        <td><?= $banner['title'];?></td>
+                        <td><?= $label['title'];?></td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic outlined example">
-                                <button type="button" class="btn  btn-outline-primary">Show</button>
-                                <button type="button" class="btn  btn-outline-secondary">Edit</button>
-                                <button type="button" class="btn  btn-outline-danger">Delete</button>
+                              <a href="show.php?id=<?=$label['id'] ;?>"> <button type="button" class="btn  btn-outline-primary">Show</button></a> 
+                              <a href="edit.php?id=<?=$label['id'] ;?>"> <button type="button" class="btn  btn-outline-secondary">Edit</button></a>
+                                <a href="delete.php?id=<?=$label['id'] ;?>">  <button type="button" class="btn  btn-outline-danger">Delete</button></a>
                             </div>
                         </td>
                     </tr>
@@ -73,7 +73,7 @@ foreach ($banners as $banner):
                     </tbody>
                 </table>
 
-
+                <a href="create.php"><button type="button" class="btn  btn-outline-danger">Add new</button></a>
             </div>
 
 

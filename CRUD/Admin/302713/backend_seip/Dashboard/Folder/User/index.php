@@ -5,23 +5,19 @@ $username = "root";
 $password = "";
 
 
-$conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
+$conn = new PDO("mysql:host=$servername;dbname=seip", $username, $password);
 // set the PDO error mode to exception
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$query="SELECT * FROM `banners`";
+$query="SELECT * FROM `user`";
 $stmt=$conn->prepare($query);
 $result=$stmt->execute();
-$banners= $stmt->fetchAll();
+$users= $stmt->fetchAll();
 //echo '<pre>';
-//print_r($banners);
+//print_r($users);
 //echo '</pre>';
-////var_dump($banners);
-
-foreach ($banners as $banner):
-
-    endforeach;
-
+////var_dump($users);
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -32,37 +28,45 @@ foreach ($banners as $banner):
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Banners List</title>
+    <title>Users List</title>
 </head>
 <body>
 
 <section>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-sm-6">
+            <div class="col-sm-10">
                 <h1 class="text-center mb-4"> List</h1>
                 <table class="table  table-success table-striped table-bordered table-hover">
                     <thead>
                     <tr>
 
-                        <th scope="col">Title</th>
+                        <th scope="col">Full_Name</th>
+                        <th scope="col">User_Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Mobile_Number</th>
+                        <th scope="col">Password</th>
                         <th scope="col">Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php
-                    foreach ($banners as $banner):
+                    foreach ($users as $user):
 
 
                     ?>
                     <tr>
 
-                        <td><?= $banner['title'];?></td>
+                        <td><?= $user['f_name'];?></td>
+                        <td><?= $user['u_name'];?></td>
+                        <td><?= $user['email'];?></td>
+                        <td><?= $user['number'];?></td>
+                        <td><?= $user['password'];?></td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic outlined example">
-                            <a href="show.php?id=<?=$banner['id'];?>"><button type="button" class="btn  btn-outline-primary">Show</button></a>
+                            <a href="show.php?id=<?=$user['id'];?>"><button type="button" class="btn  btn-outline-primary">Show</button></a>
                                 <button type="button" class="btn  btn-outline-secondary">Edit</button>
-                                <a href="delete.php?id=<?=$banner['id'];?>"> <button type="button" class="btn  btn-outline-danger">Delete</button></a>
+                                <a href="delete.php?id=<?=$user['id'];?>"> <button type="button" class="btn  btn-outline-danger">Delete</button></a>
                             </div>
                         </td>
                     </tr>
@@ -73,7 +77,7 @@ foreach ($banners as $banner):
                     </tbody>
                 </table>
 
-
+                <a href="create.php" class="btn btn-primary">Add User</a>
             </div>
 
 

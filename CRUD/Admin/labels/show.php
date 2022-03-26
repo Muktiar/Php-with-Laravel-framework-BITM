@@ -1,5 +1,5 @@
 <?php
-
+$_id = $_GET['id'];
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -8,18 +8,18 @@ $password = "";
 $conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
 // set the PDO error mode to exception
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$query="SELECT * FROM `banners`";
+$query="SELECT * FROM `labels`WHERE `id`=$_id";
 $stmt=$conn->prepare($query);
 $result=$stmt->execute();
-$banners= $stmt->fetchAll();
+$labels= $stmt->fetch();
 //echo '<pre>';
-//print_r($banners);
+//print_r($labels);
 //echo '</pre>';
-////var_dump($banners);
+////var_dump($labels);
 
-foreach ($banners as $banner):
+// foreach ($labels as $label):
 
-    endforeach;
+//     endforeach;
 
 ?>
 <!doctype html>
@@ -32,7 +32,7 @@ foreach ($banners as $banner):
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Banners List</title>
+    <title>labels List</title>
 </head>
 <body>
 
@@ -45,30 +45,20 @@ foreach ($banners as $banner):
                     <thead>
                     <tr>
 
+                        <th scope="col">Id</th>
                         <th scope="col">Title</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Picture_Title</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php
-                    foreach ($banners as $banner):
-
-
-                    ?>
+                   
                     <tr>
-
-                        <td><?= $banner['title'];?></td>
-                        <td>
-                            <div class="btn-group" role="group" aria-label="Basic outlined example">
-                            <a href="show.php?id=<?=$banner['id'];?>"><button type="button" class="btn  btn-outline-primary">Show</button></a>
-                                <button type="button" class="btn  btn-outline-secondary">Edit</button>
-                                <a href="delete.php?id=<?=$banner['id'];?>"> <button type="button" class="btn  btn-outline-danger">Delete</button></a>
-                            </div>
-                        </td>
+                        <td><?= $labels['id'];?></td>
+                        <td><?= $labels['title'];?></td>
+                        <td><?= $labels['picture'];?></td>
+                        
                     </tr>
-                    <?php
-                    endforeach;
-                    ?>
+                    
 
                     </tbody>
                 </table>
