@@ -1,7 +1,7 @@
 <?php
 class User{
     public $firstname="registered";
-    public function user(){
+    public function hello2(){
         return "hello ".$this->firstname;
     }
 }
@@ -11,7 +11,7 @@ class Car{
     public $hasSunRoof=true;
     private $model;
     public function setModel($model)
-    { $this->$model=$model;}
+    { $this->model=$model;}
         public
         function getModel()
         {
@@ -47,10 +47,10 @@ echo $mercedes->hello1().'<hr>';
 //----------------------------------------------
 //exercise 1:
 $user = new User();
-echo $user -> user().'<hr>';
+echo $user -> hello2().'<hr>';
 //----------------------------------------------
-//$mercedes ->model='Mercedes'.'<br>';
-//echo $mercedes->getmodel().'<hr>';
+//$mercedes ->model='Mercedes'.'<br>';(no_output because 'model' is private value)
+//echo $mercedes->getmodel().'<hr>';(no_output)
 //----------------------------------------------
 $mercedes->setModel ("Mercedes");
 echo $mercedes ->getModel();
