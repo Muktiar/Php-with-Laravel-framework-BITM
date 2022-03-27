@@ -5,7 +5,7 @@ $username = "root";
 $password = "";
 
 
-$conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
+$conn = new PDO("mysql:host=$servername;dbname=ecommnerce302713", $username, $password);
 // set the PDO error mode to exception
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $query="SELECT * FROM `labels`";
@@ -17,9 +17,15 @@ $labels= $stmt->fetchAll();
 //echo '</pre>';
 ////var_dump($labels);
 
+<<<<<<< HEAD
 // foreach ($labels as $label):
 
 //     endforeach;
+=======
+//foreach ($banners as $banner):
+//
+//    endforeach;
+>>>>>>> 5aa01343f82136f90e7534f447cdf249e01868e5
 
 ?>
 <!doctype html>
@@ -32,7 +38,11 @@ $labels= $stmt->fetchAll();
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+<<<<<<< HEAD
     <title>labels List</title>
+=======
+    <title>Labels List</title>
+>>>>>>> 5aa01343f82136f90e7534f447cdf249e01868e5
 </head>
 <body>
 
@@ -60,9 +70,15 @@ $labels= $stmt->fetchAll();
                         <td><?= $label['title'];?></td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic outlined example">
+<<<<<<< HEAD
                               <a href="show.php?id=<?=$label['id'] ;?>"> <button type="button" class="btn  btn-outline-primary">Show</button></a> 
                               <a href="edit.php?id=<?=$label['id'] ;?>"> <button type="button" class="btn  btn-outline-secondary">Edit</button></a>
                                 <a href="delete.php?id=<?=$label['id'] ;?>">  <button type="button" class="btn  btn-outline-danger">Delete</button></a>
+=======
+                                <a href="show.php?id=<?=$label['id'];?>">   <button type="button" class="btn  btn-outline-primary">Show</button></a>
+                                <a href="edit.php?id=<?=$label['id'];?>">  <button type="button" class="btn  btn-outline-secondary">Edit</button></a>
+                                <a href="delete.php?id=<?=$label['id'];?>">  <button type="button" class="btn  btn-outline-danger">Delete</button></a>
+>>>>>>> 5aa01343f82136f90e7534f447cdf249e01868e5
                             </div>
                         </td>
                     </tr>
@@ -72,6 +88,7 @@ $labels= $stmt->fetchAll();
 
                     </tbody>
                 </table>
+                <a href="create.php">  <button type="button" class="btn  btn-outline-danger">Add</button></a>
 
                 <a href="create.php"><button type="button" class="btn  btn-outline-danger">Add new</button></a>
             </div>

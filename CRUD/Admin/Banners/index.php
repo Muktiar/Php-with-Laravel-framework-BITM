@@ -40,12 +40,23 @@ foreach ($banners as $banner):
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-6">
-                <h1 class="text-center mb-4"> List</h1>
+                <h1 class="text-center  mb-4"> 𝕭𝖆𝖓𝖓𝖊𝖗 𝕷𝖎𝖘𝖙</h1>
+                <ul class="nav justify-content-center fs-5 fs-bold mb-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="create.php">Add an item</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://c.tenor.com/SXUZfh0fu18AAAAd/kid-happy.gif">Welcome</a>
+                    </li>
+
+                </ul>
+
                 <table class="table  table-success table-striped table-bordered table-hover">
                     <thead>
                     <tr>
 
                         <th scope="col">Title</th>
+
                         <th scope="col">Action</th>
                     </tr>
                     </thead>
@@ -58,11 +69,18 @@ foreach ($banners as $banner):
                     <tr>
 
                         <td><?= $banner['title'];?></td>
+
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic outlined example">
+<<<<<<< HEAD
                             <a href="show.php?id=<?=$banner['id'];?>"><button type="button" class="btn  btn-outline-primary">Show</button></a>
                                 <button type="button" class="btn  btn-outline-secondary">Edit</button>
                                 <a href="delete.php?id=<?=$banner['id'];?>"> <button type="button" class="btn  btn-outline-danger">Delete</button></a>
+=======
+                                <a href="show.php?id=<?= $banner['id'];?>">  <button type="button" class="btn  btn-outline-primary">Show</button></a>
+                                <a href="edit.php?id=<?= $banner['id'];?>"> <button type="button" class="btn  btn-outline-secondary">Edit</button>
+                                    <a href="delete.php?id=<?= $banner['id'];?>">  <button type="button" class="btn  btn-outline-danger">Delete</button>
+>>>>>>> 5aa01343f82136f90e7534f447cdf249e01868e5
                             </div>
                         </td>
                     </tr>
