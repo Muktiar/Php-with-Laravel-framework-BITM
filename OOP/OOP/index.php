@@ -2,8 +2,24 @@
 include_once ("vendor/autoload.php");
 
 
-use Bitm\Customer\Person;
+use Bitm\Calculator\AreaCalculator\Rectangle;
+use Bitm\Calculator\AreaCalculator\Circle;
+use Bitm\Calculator\AreaCalculator\Triangle;
+use Bitm\Product\Product;
 
+$rectangle=new Rectangle(20,20,`cm`);
+echo $rectangle->getarea();
+echo '<hr>';
+$circle=new Circle();
+echo $circle->getarea();
+echo '<hr>';
+$triangle=new Triangle(6,2,`sqcm`);
+echo $triangle->getarea();
+echo '<hr>';
+$product=new Product(`sqcm`);
+echo $product->getDetail();
+echo '<hr>';
+die();
 //include_once('Greeting/Greeting.php');
 //include_once('Customer/Person.php');
 
