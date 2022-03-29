@@ -26,13 +26,10 @@
                         </div>
                     </div>
                     <div class="mb-3 row">
-<<<<<<< HEAD
+
                         <label for="picture" class="col-sm-2 col-form-label">Images</label>
-=======
-                        <label for="picture" class="col-sm-2 col-form-label">Title</label>
->>>>>>> 5aa01343f82136f90e7534f447cdf249e01868e5
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="picture" name="picture" value=" ">
+                            <input type="file" class="form-control" id="picture" name="picture" value=" ">
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
