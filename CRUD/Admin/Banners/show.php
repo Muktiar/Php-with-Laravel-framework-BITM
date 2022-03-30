@@ -58,6 +58,13 @@ echo '<br>';
                         <?= $banner['picture'];?>
                     <img src="<?=$webroot;?>/uploads/<?=$banner['picture'];?>">
                     </dd>
+                    <dt class="col-sm-3">Is Active</dt>
+                    <dd class="col-sm-9">
+                            <?=$banner['is_active']==1?'active':'inactive';
+                        //echo $banner['is_active'];
+
+                        ?>
+                    </dd>
 
 
                 </dl>

@@ -56,6 +56,7 @@ foreach ($banners as $banner):
                     <tr>
 
                         <th scope="col">Title</th>
+                        <th scope="col">Status</th>
 
                         <th scope="col">Action</th>
                     </tr>
@@ -69,18 +70,15 @@ foreach ($banners as $banner):
                     <tr>
 
                         <td><?= $banner['title'];?></td>
+                        <td><?=$banner['is_active']==1?'Activated':'Deactivated';?></td>
+
 
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic outlined example">
-<<<<<<< HEAD
-                            <a href="show.php?id=<?=$banner['id'];?>"><button type="button" class="btn  btn-outline-primary">Show</button></a>
-                                <button type="button" class="btn  btn-outline-secondary">Edit</button>
-                                <a href="delete.php?id=<?=$banner['id'];?>"> <button type="button" class="btn  btn-outline-danger">Delete</button></a>
-=======
                                 <a href="show.php?id=<?= $banner['id'];?>">  <button type="button" class="btn  btn-outline-primary">Show</button></a>
                                 <a href="edit.php?id=<?= $banner['id'];?>"> <button type="button" class="btn  btn-outline-secondary">Edit</button>
                                     <a href="delete.php?id=<?= $banner['id'];?>">  <button type="button" class="btn  btn-outline-danger">Delete</button>
->>>>>>> 5aa01343f82136f90e7534f447cdf249e01868e5
+
                             </div>
                         </td>
                     </tr>

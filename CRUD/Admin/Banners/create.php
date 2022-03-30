@@ -34,8 +34,19 @@
                     <div class="mb-3 row">
                         <label for="formFile" class="all-form-label">Picture</label>
                         <div class="col-sm-6">
-                            <input type="file" class="form-control" id="formFile" name="picture" value=" ">                        </div>
+                            <input type="file" class="form-control" id="formFile" name="picture" value=" ">
+                        </div>
                     </div>
+
+
+                    <div class="mb-3 row form-check">
+                        <div class="col-sm-6">
+                            <input type="checkbox" class="form-check-input" id="is_active" name="is_active" value="1">
+                        </div>
+                        <label for="is_active" class="col-sm-6 form-check-label">Is Active</label>
+                    </div>
+
+
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>

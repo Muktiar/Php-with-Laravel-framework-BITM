@@ -35,7 +35,7 @@ $banner= $stmt->fetch();
     <div class="container">
         <div  class="row justify-content-center">
             <div class="container">
-                <h1 class="text-center"> ADD New</h1>
+                <h1 class="text-center"> ░E░d░i░t░</h1>
                 <form method="post" action="update.php?id=<?= $banner['id']?>"enctype="multipart/form-data">
                     <div class="mb-3 row">
                         <label for="title" class="col-sm-2 col-form-label">Title</label>
@@ -59,6 +59,28 @@ $banner= $stmt->fetch();
                         </div>
 
                     </div>
+
+                    <div class="mb-3 row form-check">
+                        <div class="col-sm-6">
+                            <?php
+                            if ($banner['is_active']==0){
+
+
+                            ?>
+
+                            <input type="checkbox" class="form-check-input" id="is_active" name="is_active" value="1">
+                            <?php
+                           }else{
+                            ?>
+                            <input type="checkbox" class="form-check-input" id="is_active" name="is_active" checked value="1">
+                            <?php
+                            }
+                            ?>
+                        </div>
+                        <label for="is_active" class="col-sm-6 form-check-label">Is Active</label>
+                    </div>
+
+
 
 
                     <button type="submit" class="btn btn-primary">Submit</button>
