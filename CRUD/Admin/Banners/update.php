@@ -18,7 +18,8 @@ else{
 
 }
 
-
+date_default_timezone_set('ASIA/DHAKA');
+$_modified_at=date("Y-m-d h-i-s",time());
 
 
 $_id=$_GET['id'];
@@ -45,13 +46,15 @@ $password = "";
 $conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
 // set the PDO error mode to exception
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$query='UPDATE `banners` SET `title` = :title, `description` = :description,`picture` = :picture,`is_active` = :is_active  WHERE `banners`.`id` = :id';
+$query='UPDATE `banners` SET `title` = :title, `description` = :description,`picture` = :picture,`is_active` = :is_active ,`modified_at`=:modified_at WHERE `banners`.`id` = :id';
 $stmt=$conn->prepare($query);
 $stmt->bindParam(':id',$_id);
 $stmt->bindParam(':title',$_title);
 $stmt->bindParam(':description',$_description);
 $stmt->bindParam(':picture',$_picture);
 $stmt->bindParam(':is_active',$_is_active);
+
+$stmt->bindParam(':modified_at',$_modified_at);
 
 $result=$stmt->execute();
 //var_dump($result);

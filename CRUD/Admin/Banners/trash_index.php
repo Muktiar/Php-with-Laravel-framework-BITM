@@ -8,7 +8,7 @@ $password = "";
 $conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
 // set the PDO error mode to exception
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$query="SELECT * FROM `banners` WHERE is_deleted=0";
+$query="SELECT * FROM `banners` WHERE is_deleted=1";
 $stmt=$conn->prepare($query);
 $result=$stmt->execute();
 $banners= $stmt->fetchAll();
@@ -19,7 +19,7 @@ $banners= $stmt->fetchAll();
 
 foreach ($banners as $banner):
 
-    endforeach;
+endforeach;
 
 ?>
 <!doctype html>
@@ -40,13 +40,13 @@ foreach ($banners as $banner):
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-6">
-                <h1 class="text-center  mb-4"> 𝕭𝖆𝖓𝖓𝖊𝖗 𝕷𝖎𝖘𝖙</h1>
+                <h1 class="text-center  mb-4"> 🆃🆁🅰🆂🅷 🅸🆃🅴🅼</h1>
                 <ul class="nav justify-content-center fs-5 fs-bold mb-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="create.php">Add an item</a>
+                        <a class="nav-link active" aria-current="page" href="create.php">All Trash item</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="trash_index.php">Trash List</a>
+                        <a class="nav-link" href="index.php">list</a>
                     </li>
 
                 </ul>
@@ -56,7 +56,7 @@ foreach ($banners as $banner):
                     <tr>
 
                         <th scope="col">Title</th>
-                        <th scope="col">Status</th>
+
 
                         <th scope="col">Action</th>
                     </tr>
@@ -66,22 +66,22 @@ foreach ($banners as $banner):
                     foreach ($banners as $banner):
 
 
-                    ?>
-                    <tr>
+                        ?>
+                        <tr>
 
-                        <td><?= $banner['title'];?></td>
-                        <td><?=$banner['is_active']==1?'Activated':'Deactivated';?></td>
+                            <td><?= $banner['title'];?></td>
 
 
-                        <td>
-                            <div class="btn-group" role="group" aria-label="Basic outlined example">
-                                <a href="show.php?id=<?= $banner['id'];?>">  <button type="button" class="btn  btn-outline-primary">Show</button></a>
-                                <a href="edit.php?id=<?= $banner['id'];?>"> <button type="button" class="btn  btn-outline-secondary">Edit</button>
-                                        <a href="trash.php?id=<?= $banner['id'];?>">  <button type="button" class="btn  btn-outline-danger">Trash</button>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic outlined example">
+<!--                                    <a href="show.php?id=--><?//= $banner['id'];?><!--">  <button type="button" class="btn  btn-outline-primary">Show</button></a>-->
+<!--                                    <a href="edit.php?id=--><?//= $banner['id'];?><!--"> <button type="button" class="btn  btn-outline-secondary">Edit</button>-->
+                                        <a href="delete.php?id=<?= $banner['id'];?>">  <button type="button" class="btn  btn-outline-danger">Permanently Delete</button>
+                                            <a href="restore.php?id=<?= $banner['id'];?>">  <button type="button" class="btn  btn-outline-danger">Restore</button>
 
-                            </div>
-                        </td>
-                    </tr>
+                                </div>
+                            </td>
+                        </tr>
                     <?php
                     endforeach;
                     ?>

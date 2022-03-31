@@ -67,6 +67,11 @@ echo '<br>';
                     </dd>
 
 
+                    <dt class="col-sm-3">Created At</dt>
+                    <dd class="col-sm-9"><?= $banner['created_at'];?></dd>
+                    <dt class="col-sm-3">Modified At</dt>
+                    <dd class="col-sm-9"><?= $banner['modified_at'];?></dd>
+
                 </dl>
 
             </div>
