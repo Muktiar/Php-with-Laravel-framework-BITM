@@ -43,7 +43,7 @@ endforeach;
                 <h1 class="text-center  mb-4"> 🆃🆁🅰🆂🅷 🅸🆃🅴🅼</h1>
                 <ul class="nav justify-content-center fs-5 fs-bold mb-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="create.php">All Trash item</a>
+                        <a class="nav-link active" aria-current="page" href="#">All Trash item</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php">list</a>

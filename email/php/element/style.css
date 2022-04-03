@@ -1,0 +1,40 @@
+
+.bar{
+    background-color: black;
+    padding: 3px;
+}
+.image{
+    margin-left: 40%;
+}
+.top-header{
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 30%;
+    font-size: 2rem;
+}
+.body-map{
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.link{
+
+    margin-top: 50px;
+    margin-left: 40%;
+
+}
+.link a{
+    margin-top: 30px;
+    color: white;
+    background-color: #2554C7;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.footer{
+    margin-top: 100px;
+}
+.body-text{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+
+}

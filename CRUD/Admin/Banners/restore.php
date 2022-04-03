@@ -1,6 +1,4 @@
 <?php
-
-
 $_id=$_GET['id'];
 $_is_deleted =0;
 
