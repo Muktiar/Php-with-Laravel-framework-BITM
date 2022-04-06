@@ -17,10 +17,6 @@ $banners= $stmt->fetchAll();
 //echo '</pre>';
 ////var_dump($banners);
 
-foreach ($banners as $banner):
-
-    endforeach;
-
 ?>
 <!doctype html>
 <html lang="en">

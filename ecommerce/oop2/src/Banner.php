@@ -3,22 +3,37 @@
 namespace Bitm;
 
 use PDO;
+
+
 class Banner{
-    public function index(){
+
+
+public $id=null;
+public $title=null;
+public $description=null;
+public $picture=null;
+public $is_active=null;
+public $created_at=null;
+public $modified_at=null;
+public $is_deleted=null;
 
 
 
-
+    public function __construct()
+    {
         $servername = "localhost";
         $username = "root";
         $password = "";
 
 
-        $conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
+        $this->conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
 // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+
+    public function index(){
         $query="SELECT * FROM `banners` WHERE is_deleted=0";
-        $stmt=$conn->prepare($query);
+        $stmt=$this->conn->prepare($query);
         $result=$stmt->execute();
         $banners= $stmt->fetchAll();
         return $banners;
@@ -55,16 +70,9 @@ class Banner{
 
 
 //Connect to Database.
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
 
-
-        $conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
-// set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $query='INSERT INTO `banners` (`title`,`description`,`picture`,`is_active`,`created_at`) VALUES (:title,:description,:picture,:is_active,:created_at)';
-        $stmt=$conn->prepare($query);
+        $stmt=$this->conn->prepare($query);
         $stmt->bindParam(':title',$_title);
         $stmt->bindParam(':description',$_description);
         $stmt->bindParam(':picture',$_picture);
@@ -80,38 +88,24 @@ class Banner{
         $webroot='http://localhost/muktiar/Php-with-Laravel-framework-BITM/ecommerce/oop2/';
         $_id=$_GET['id'];
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
 
-
-        $conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
-// set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $query="SELECT * FROM `banners` WHERE id=:id";
-        $stmt=$conn->prepare($query);
+        $stmt=$this->conn->prepare($query);
         $stmt->bindParam(':id',$_id);
         $result=$stmt->execute();
         $banner= $stmt->fetch();
         return $banner;
     }
     public function edit(){
-        $webroot='http://localhost/muktiar/Php-with-Laravel-framework-BITM/ecommerce/oop2';
+        $webroot='http://localhost/muktiar/Php-with-Laravel-framework-BITM/ecommerce/oop2/';
 
         $_id=$_GET['id'];
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
 
-
-        $conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
-// set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $query="SELECT * FROM `banners` WHERE id=:id";
-        $stmt=$conn->prepare($query);
+        $stmt=$this->conn->prepare($query);
         $stmt->bindParam(':id',$_id);
         $result=$stmt->execute();
         $banner= $stmt->fetch();
@@ -158,16 +152,9 @@ class Banner{
 
 
 //Connect to Database.
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
 
-
-        $conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
-// set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $query='UPDATE `banners` SET `title` = :title, `description` = :description,`picture` = :picture,`is_active` = :is_active ,`modified_at`=:modified_at WHERE `banners`.`id` = :id';
-        $stmt=$conn->prepare($query);
+        $stmt=$this->conn->prepare($query);
         $stmt->bindParam(':id',$_id);
         $stmt->bindParam(':title',$_title);
         $stmt->bindParam(':description',$_description);
@@ -185,17 +172,10 @@ public function trash(){
     $_is_deleted =1;
 
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
 
-
-    $conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
-// set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $query='UPDATE `banners` SET `is_deleted` = :is_deleted WHERE `banners`.`id` = :id';
-    $stmt=$conn->prepare($query);
+    $stmt=$this->conn->prepare($query);
     $stmt->bindParam(':id',$_id);
 
     $stmt->bindParam(':is_deleted',$_is_deleted);
@@ -205,16 +185,9 @@ public function trash(){
 }
 
 public function trash_index(){
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
 
-
-    $conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
-// set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $query="SELECT * FROM `banners` WHERE is_deleted=1";
-    $stmt=$conn->prepare($query);
+    $stmt=$this->conn->prepare($query);
     $result=$stmt->execute();
     $banners= $stmt->fetchAll();
     return $banners;
@@ -224,17 +197,10 @@ public  function restore(){
     $_is_deleted =0;
 
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
 
-
-    $conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
-// set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $query='UPDATE `banners` SET `is_deleted` = :is_deleted WHERE `banners`.`id` = :id';
-    $stmt=$conn->prepare($query);
+    $stmt=$this->conn->prepare($query);
     $stmt->bindParam(':id',$_id);
 
     $stmt->bindParam(':is_deleted',$_is_deleted);
@@ -253,17 +219,10 @@ public  function restore(){
 public function delete(){
     $_id=$_GET['id'];
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
 
-
-    $conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
-// set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $query="DELETE FROM banners WHERE `banners`.`id` = :id ";
-    $stmt=$conn->prepare($query);
+    $stmt=$this->conn->prepare($query);
     $stmt->bindParam(':id',$_id);
     $result=$stmt->execute();
     echo '<br>';
@@ -278,6 +237,25 @@ public function delete(){
     header('location:index.php');
 }
 
+    public function uploads()
+    { $approot=$_SERVER['DOCUMENT_ROOT'].'/muktiar/Php-with-Laravel-framework-BITM/ecommerce/oop2/';
+        if ($_FILES['picture']['name']!=''){
+            $_file_name='img_'.time().'-' .$_FILES['picture']['name'];
+            $target=$_FILES["picture"]['tmp_name'];
+            $destination=$approot.'uploads/'.$_file_name;
+            $is_file_moved=move_uploaded_file($target,$destination);
+            if ($is_file_moved){
+                $_picture=$_file_name;
+            }
 
+        }
+        else{
+            if ($_POST['old_picture']){
+                $_picture=$_POST['old_picture'];
+
+            }
+        }
+        return $_picture;
+    }
 }
 ?>

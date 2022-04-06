@@ -12,14 +12,8 @@ $query="SELECT * FROM `categories`";
 $stmt=$conn->prepare($query);
 $result=$stmt->execute();
 $categories= $stmt->fetchAll();
-//echo '<pre>';
-//print_r($banners);
-//echo '</pre>';
-////var_dump($banners);
 
-foreach ($categories as $category):
 
-    endforeach;
 
 ?>
 <!doctype html>

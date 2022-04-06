@@ -1,11 +1,7 @@
 <?php
 
+include_once($_SERVER['DOCUMENT_ROOT'].'/muktiar/Php-with-Laravel-framework-BITM/ecommerce/oop2/Admin/Banners/config.php');
 
-$approot=$_SERVER['DOCUMENT_ROOT'].'/muktiar/Php-with-Laravel-framework-BITM/ecommerce/oop2/';
-
-$webroot="http://localhost/muktiar/Php-with-Laravel-framework-BITM/ecommerce/oop2/";
-
-include_once ($approot.'vendor/autoload.php');
 
 use Bitm\Banner;
 $banner=new banner();

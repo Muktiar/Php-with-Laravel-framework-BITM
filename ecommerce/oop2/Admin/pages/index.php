@@ -1,25 +1,20 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
+$approot=$_SERVER['DOCUMENT_ROOT'].'/muktiar/Php-with-Laravel-framework-BITM/ecommerce/oop2/';
 
+$webroot="http://localhost/muktiar/Php-with-Laravel-framework-BITM/ecommerce/oop2/";
 
-$conn = new PDO("mysql:host=$servername;dbname=ecommerce302713", $username, $password);
-// set the PDO error mode to exception
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$query="SELECT * FROM `pages`";
-$stmt=$conn->prepare($query);
-$result=$stmt->execute();
-$pages= $stmt->fetchAll();
+include_once ($approot.'vendor/autoload.php');
+
+use Bitm\Pages;
+$page=new pages();
+$pages=$page->index();
 //echo '<pre>';
 //print_r($banners);
 //echo '</pre>';
 ////var_dump($banners);
 
-foreach ($pages as $page):
 
-    endforeach;
 
 ?>
 <!doctype html>
