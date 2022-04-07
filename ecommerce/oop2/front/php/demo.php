@@ -1,4 +1,14 @@
+<?php
+include_once($_SERVER['DOCUMENT_ROOT'].'/muktiar/Php-with-Laravel-framework-BITM/ecommerce/oop2/Admin/Banners/config.php');
 
+
+
+use Bitm\Banner;
+$banner=new banner();
+$banners=$banner->getActivebanners();
+var_dump( $banners);
+
+?>
 <!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <!--[if IE 8 ]><html dir="ltr" lang="en" class="ie8"><![endif]-->
