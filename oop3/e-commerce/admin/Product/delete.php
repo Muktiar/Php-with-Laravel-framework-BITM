@@ -1,7 +1,7 @@
 <?php
 include_once ($_SERVER['DOCUMENT_ROOT']."/muktiar/Php-with-Laravel-framework-BITM/oop3/e-commerce/config.php");
 
-use Bitm\users;
+use Bitm\products;
 
-$_user = new users();
-$_user->delete();
+$_product = new products();
+$_product->delete();

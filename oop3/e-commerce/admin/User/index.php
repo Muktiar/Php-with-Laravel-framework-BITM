@@ -1,19 +1,12 @@
 <?php
+include_once ($_SERVER['DOCUMENT_ROOT']."/muktiar/Php-with-Laravel-framework-BITM/oop3/e-commerce/config.php");
 
-//Connect to database
-$servername = "localhost";
-$username = "root";
-$password = "";
+use Bitm\users;
 
-$conn = new PDO("mysql:host=$servername;dbname=ecommerce", $username, $password);
-// set the PDO error mode to exception
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$_user = new users();
+$users = $_user->index();
 
-$query = "SELECT * FROM `users`";
-$stmt = $conn->prepare($query);
-$result = $stmt->execute();
-$users = $stmt->fetchAll();
-//var_dump($banners);
+
 
 ?>
 
@@ -27,75 +20,48 @@ $users = $stmt->fetchAll();
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>CRUD</title>
+    <title>List</title>
 </head>
 <body>
-
 <section>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-4">
-                <ul class="nav">
+            <div class="col-sm-6">
+                <h1 class="text-center mb-4">List</h1>
+                <ul class="nav justify-content-center fs-3 fw-bold mb-3">
                     <li class="nav-item">
-                        <a class="nav-link h4" href="create.php">
-                            <button type="button" class="btn btn-outline-success">Add An Item</button>
-                        </a>
+                        <a class="nav-link" href="create.php">Add an item</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="trash_index.php">Trashed Items</a>
                     </li>
                 </ul>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <table class="table table-responsive table-hover">
-                    <thead class="thead-dark">
+                <table class="table table-bordered">
+                    <thead>
                     <tr>
-                        <th scope="col"> ID</th>
-                        <th scope="col"> Full Name</th>
-                        <th scope="col"> User Name</th>
-                        <th scope="col"> Email</th>
-                        <th scope="col"> Phone</th>
-                        <th scope="col"> Password</th>
-                        <th scope="col"> Action</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
                     </tr>
                     </thead>
-
                     <tbody>
                     <?php
-                    if(count($users)>0):
-                        foreach ($users as $user) :
-                            ?>
-                            <tr>
-                                <td> <?php echo $user['id']?> </td>
-                                <td><a href="show.php?id=<?php echo $user['id']?>"><?php echo $user['full_name']?></a>  </td>
-                                <td><a href="show.php?id=<?php echo $user['id']?>"><?php echo $user['user_name']?></a>  </td>
-                                <td> <?php echo $user['mail']?> </td>
-                                <td> <?php echo $user['mobile']?> </td>
-                                <td> <?php echo md5(true)?></td>
-                                <td><a href="edit.php?id=<?php echo $user['id']?>">EDIT</a>  |
-                                    <a href="delete.php?id=<?php echo $user['id']?>" onclick="return confirm('Are you sure you want to delete')">Delete</a>
-                                </td>
-                            </tr>
-                        <?php
-                        endforeach;
-                    else:
-                        ?>
-                        <tr>
-                            <td colspan="2"> No User is Available. <a href="create.php">Click here to add one</a></td>
-                        </tr>
-                    <?php
-                    endif;
+                    foreach ($users as $user):
                     ?>
+                    <tr>
+                        <td><?= $user['title'];?></td>
+                        <td><?= $user['is_active']? "Active" : "Deactivated"; ?></td>
+                        <td><a href="show.php?id=<?= $user['id'];?>">Show</a> | <a href="edit.php?id=<?= $user['id'];?>">Edit</a> | <a href="trash.php?id=<?= $user['id'];?>">Trash</a></td>
+                    </tr>
+                     <?php
+                      endforeach;
+                     ?>
                     </tbody>
                 </table>
-
             </div>
-
         </div>
-
     </div>
 </section>
-
-
 
 <!-- Optional JavaScript; choose one of the two! -->
 
@@ -109,3 +75,11 @@ $users = $stmt->fetchAll();
 -->
 </body>
 </html>
+
+
+
+
+
+
+
+

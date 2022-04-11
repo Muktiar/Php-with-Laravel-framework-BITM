@@ -1,6 +1,7 @@
 <?php
 
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,105 +19,57 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-6">
-                <h1 class="text-center">Add New Product</h1>
+                <h1 class="text-center">Add New</h1>
                 <form method="post" action="store.php" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="p_input_title">Title</label>
-                        <input type="text"
-                               class="form-control"
-                               id="p_input_title"
-                               name="title"
-                               value=""
-                               aria-describedby="titleHelp"
-                               placeholder="Enter Product Title">
+                    <div class="mb-3 row">
+                        <label for="title" class="col-sm-2 col-form-label">Title:</label>
+                        <div class="col-sm-10">
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    id="title"
+                                    name="title"
+                                    value="">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="detail" class="col-sm-2 col-form-label">Detail:</label>
+                        <div class="col-sm-10">
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    id="detail"
+                                    name="detail"
+                                    value="">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFile" class="col-form-label col-sm-2">Picture</label>
+                        <div class="col-sm-10">
+                            <input
+                                    class="form-control"
+                                    type="file"
+                                    id="formFile"
+                                    name="picture"
+                                    value="">
+                        </div>
+                    </div>
+                    <div class="mb-3 row form-check">
+                        <div class="col-sm-6">
+                            <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                    id="is-active"
+                                    name="is_active"
+                                    value="1">
+                        </div>
+                        <label for="is-active" class="col-sm-6 form-check-label">Is Active:</label>
                     </div>
 
-                    <div class="form-group">
-                        <label for="p_input_shortdes">Short Description</label>
-                        <input type="text"
-                               class="form-control"
-                               id="p_input_shortdes"
-                               name="short_description"
-                               value=""
-                               aria-describedby="titleHelp"
-                               placeholder="Enter Product short description">
-                    </div>
-                    <div class="form-group">
-                        <label for="p_input_des">Description</label>
-                        <input type="text"
-                               class="form-control"
-                               id="p_input_des"
-                               name="description"
-                               value=""
-                               aria-describedby="titleHelp"
-                               placeholder="Enter Product description">
-                    </div>
-                    <div class="form-group">
-                        <label for="product_pic">Picture</label>
-                        <input type="file"
-                               class="form-control-file"
-                               id="product_pic"
-                               name="picture"
-                               value=""
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="product_type">Product Type</label><br>
-                        <select name="product_p_type" id="product_type">
-                            <option value="18">Men</option>
-                            <option value="19">Women</option>
-                            <option value="20">Accessories</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="p_mrp">MRP</label>
-                        <input type="number"
-                               class="form-control"
-                               id="p_mrp"
-                               name="mrp"
-                               value=""
-                               aria-describedby="titleHelp"
-                               placeholder="Enter Product description">
-                    </div>
-<!--                    <div class="form-group">-->
-<!--                        <label for="totalSales">Total Sales</label>-->
-<!--                        <input type="number"-->
-<!--                               class="form-control"-->
-<!--                               id="totalSales"-->
-<!--                               name="total_sales"-->
-<!--                               value=""-->
-<!--                               aria-describedby="titleHelp"-->
-<!--                               placeholder="Enter Product Total Sales">-->
-<!--                    </div>-->
-                    <div class="form-group form-check">
-                        <label for="product_actv" class="form-check-label">
-                            <input type="checkbox"
-                                   class="form-check-input"
-                                   id="product_actv"
-                                   name="is_active"
-                                   value="1"
-                                   aria-describedby="isActiveHelp"
-                                   placeholder="Enter Is Active">
-                            Is active
-                        </label>
-                    </div>
-                    <div class="form-group form-check">
-                        <label for="product_isdel" class="form-check-label">
-                            <input type="checkbox"
-                                   class="form-check-input"
-                                   id="product_isdel"
-                                   name="is_deleted"
-                                   value="1"
-                                   aria-describedby="isDeleteHelp">
-                            Is delete
-                        </label>
-                    </div>
-                    <button type="submit" class="btn btn-info">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
-
     </div>
 </section>
 

@@ -1,23 +1,12 @@
 <?php
+include_once ($_SERVER['DOCUMENT_ROOT']."/muktiar/Php-with-Laravel-framework-BITM/oop3/e-commerce/config.php");
 
-//Connect to database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$_id = $_GET['id'];
-$conn = new PDO("mysql:host=$servername;dbname=ecommerce", $username, $password);
-// set the PDO error mode to exception
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+use Bitm\users;
 
-$query = "SELECT * FROM `users` WHERE id = :id";
-$stmt = $conn->prepare($query);
-$stmt->bindParam(':id', $_id);
-$result = $stmt->execute();
-$user = $stmt->fetch();
-//var_dump($banners);
+$_user = new users();
+$user = $_user->show();
 
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -29,45 +18,38 @@ $user = $stmt->fetch();
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>CRUD</title>
+    <title>Show</title>
 </head>
 <body>
 <section>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-5">
-                <dl>
-                    <dt>ID</dt>
-                    <dd> <?php echo $user['id'];?></dd>
-                </dl>
-                <dl>
-                    <dt>Full Name</dt>
-                    <dd> <?php echo $user['full_name'];?></dd>
-                </dl>
-                <dl>
-                    <dt>User Name</dt>
-                    <dd> <?php echo $user['user_name'];?></dd>
-                </dl>
-                <dl>
-                    <dt>Phone Number</dt>
-                    <dd> <?php echo $user['mobile'];?></dd>
-                </dl>
-                <dl>
-                    <dt>Email</dt>
-                    <dd> <?php echo $user['mail'];?></dd>
-                </dl>
-                <dl>
-                    <dt>Password</dt>
-                    <dd> <?php echo $user['pass'];?></dd>
-                </dl>
+            <div class="col-sm-6">
+                <h1 class="text-center mb-4">Show</h1>
+                <dl class="row">
+                    <dt class="col-sm-3 text-truncate">ID:</dt>
+                    <dd class="col-sm-9"><?= $user['id'];?></dd>
+                    <dt class="col-sm-3 text-truncate">Title:</dt>
+                    <dd class="col-sm-9"><?= $user['title'];?></dd>
+                    <dt class="col-sm-3 text-truncate">Picture:</dt>
+                    <dd class="col-sm-9">
+                        <?= $user['picture'];?>
+                        <img src="<?=$webroot;?>uploads/<?= $user['picture'];?>">
+                    </dd>
+                    <dt class="col-sm-3 text-truncate">Is Active:</dt>
+                    <dd class="col-sm-9"><?= $user['is_active']? "Active" : "Inactive"; ?>
+                    </dd>
+                    <dt class="col-sm-3 text-truncate">Created at:</dt>
+                    <dd class="col-sm-9"><?= $user['created_at'];?></dd>
+                    <dt class="col-sm-3 text-truncate">Modified at:</dt>
+                    <dd class="col-sm-9"><?= $user['modified_at'];?></dd>
 
+
+                </dl>
             </div>
-
         </div>
-
     </div>
 </section>
-
 
 <!-- Optional JavaScript; choose one of the two! -->
 
@@ -81,4 +63,6 @@ $user = $stmt->fetch();
 -->
 </body>
 </html>
+
+
 

@@ -1,12 +1,19 @@
 <?php
-include_once ($_SERVER['DOCUMENT_ROOT']."/muktiar/Php-with-Laravel-framework-BITM/oop3/e-commerce/config.php");
 
-use Bitm\products;
+//Connect to database
+$servername = "localhost";
+$username = "root";
+$password = "";
 
-$_product = new products();
-$products = $_product->index();
+$conn = new PDO("mysql:host=$servername;dbname=ecommerce", $username, $password);
+// set the PDO error mode to exception
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-
+$query = "SELECT * FROM `users` WHERE is_deleted = 1";
+$stmt = $conn->prepare($query);
+$result = $stmt->execute();
+$users = $stmt->fetchAll();
+//var_dump($users);
 
 ?>
 
@@ -26,32 +33,30 @@ $products = $_product->index();
 <section>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-sm-6">
-                <h1 class="text-center mb-4">List</h1>
-                <ul class="nav justify-content-center fs-3 fw-bold mb-3">
+            <div class="col-sm-5">
+                <h1 class="text-center mb-4">Trashed Items</h1>
+                <ul class="nav justify-content-center fs-5 fw-bold mb-3">
                     <li class="nav-item">
-                        <a class="nav-link" href="create.php">Add an item</a>
+                        <a class="nav-link" href="#">All Trashed Items</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="trash_index.php">Trashed Items</a>
+                        <a class="nav-link" href="index.php">List</a>
                     </li>
                 </ul>
                 <table class="table table-bordered">
                     <thead>
                     <tr>
                         <th scope="col">Title</th>
-                        <th scope="col">Status</th>
                         <th scope="col">Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php
-                    foreach ($products as $product):
+                    foreach ($users as $user):
                     ?>
                     <tr>
-                        <td><?= $product['title'];?></td>
-                        <td><?= $product['is_active']? "Active" : "Deactivated"; ?></td>
-                        <td><a href="show.php?id=<?= $product['id'];?>">Show</a> | <a href="edit.php?id=<?= $product['id'];?>">Edit</a> | <a href="trash.php?id=<?= $product['id'];?>">Trash</a></td>
+                        <td><?= $user['title'];?></td>
+                        <td><a href="delete.php?id=<?= $user['id'];?>">Delete</a> | <a href="restore.php?id=<?= $user['id'];?>">Restore</a></td>
                     </tr>
                      <?php
                       endforeach;

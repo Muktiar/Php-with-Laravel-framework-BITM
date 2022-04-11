@@ -1,4 +1,10 @@
 <?php
+include_once ($_SERVER['DOCUMENT_ROOT']."/muktiar/Php-with-Laravel-framework-BITM/oop3/e-commerce/config.php");
+
+use Bitm\users;
+
+$_user = new users();
+$user = $_user->edit();
 
 ?>
 
@@ -18,69 +24,96 @@
 <section>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-6">
-                <form method="post" action="update.php">
-                    <div class="form-group">
-                        <input type="hidden"
-                               class="form-control"
-                               id="admin_id"
-                               name="id"
-                               value="<?php echo $admin['id'];?>" aria-describedby="titleHelp"
-                               placeholder="Enter Admin id">
+            <div class="col-sm-6">
+                <h1 class="text-center">Add New</h1>
+                <form method="post" action="update.php" enctype="multipart/form-data">
+                    <div class="mb-3 row">
+                        <label for="title" class="col-sm-2 col-form-label">ID:</label>
+                        <div class="col-sm-10">
+                            <input
+                                    type="hidden"
+                                    class="form-control"
+                                    id="id"
+                                    name="id"
+                                    value="<?=$user['id'];?>">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="admin_name">Full Name</label>
-                        <input type="text"
-                               class="form-control"
-                               id="admin_name"
-                               name="full_name"
-                               value="<?php echo $admin['full_name'];?>" aria-describedby="titleHelp"
-                               placeholder="Enter Admin Name">
+                    <div class="mb-3 row">
+                        <label for="title" class="col-sm-2 col-form-label">Title:</label>
+                        <div class="col-sm-10">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="title"
+                                name="title"
+                                value="<?=$user['title'];?>">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="admin_name">User Name</label>
-                        <input type="text"
-                               class="form-control"
-                               id="admin_name"
-                               name="user_name"
-                               value="<?php echo $admin['user_name'];?>" aria-describedby="titleHelp"
-                               placeholder="Enter Admin Name">
+                    <div class="mb-3 row">
+                        <label for="detail" class="col-sm-2 col-form-label">Detail:</label>
+                        <div class="col-sm-10">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="detail"
+                                name="detail"
+                                value="">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="admin_mail">Email</label>
-                        <input type="email"
-                               class="form-control"
-                               id="admin_mail"
-                               name="mail"
-                               value="<?php echo $admin['email'];?>" aria-describedby="titleHelp"
-                               placeholder="Update Your E-mail address">
+                    <div class="mb-3 row">
+                        <label for="formFile" class="col-form-label col-sm-2">Picture</label>
+                        <div class="col-sm-10">
+                            <input
+                                    class="form-control"
+                                    type="file"
+                                    id="formFile"
+                                    name="picture"
+                                    value="<?=$user['picture'];?>">
+                            <img src="<?=$webroot;?>uploads/<?= $user['picture'];?>">
+                            <input
+                                    type="hidden"
+                                    name="old_picture"
+                                    value="<?=$user['picture'];?>">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="admin_mob">Phone</label>
-                        <input type="text"
-                               class="form-control"
-                               id="admin_mob"
-                               name="mob"
-                               value="<?php echo $admin['phone_number'];?>" aria-describedby="titleHelp"
-                               placeholder="Update Your E-mail address">
+                    <div class="mb-3 row form-check">
+                        <div class="col-sm-6">
+                            <?php
+                            if($user['is_active'] == 0){
+                            ?>
+                            <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                    id="is-active"
+                                    name="is_active"
+                                    value="1">
+                            <?php
+                            }else{
+                            ?>
+                            <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                    id="is-active"
+                                    name="is_active"
+                                    checked
+                                    value="1">
+                            <?php
+                            }
+                            ?>
+
+                        </div>
+
+                        <label for="is-active" class="col-sm-6 form-check-label">Is Active:</label>
                     </div>
-                    <div class="form-group">
-                        <label for="admin_pass">Password</label>
-                        <input type="password"
-                               class="form-control"
-                               id="admin_pass"
-                               name="pass"
-                               value="<?php echo $admin['password'];?>" aria-describedby="titleHelp"
-                               placeholder="Update Your Password">
-                    </div>
+
+
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-
             </div>
         </div>
+
     </div>
 </section>
-
 
 <!-- Optional JavaScript; choose one of the two! -->
 

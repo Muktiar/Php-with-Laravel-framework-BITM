@@ -1,4 +1,6 @@
 <?php
+include_once ($_SERVER['DOCUMENT_ROOT']."/muktiar/Php-with-Laravel-framework-BITM/oop3/e-commerce/config.php");
+include_once ($_SERVER['DOCUMENT_ROOT']."/muktiar/Php-with-Laravel-framework-BITM/oop3/e-commerce/authenticator.php");
 
 ?>
 
@@ -18,63 +20,56 @@
 <section>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-6">
-                <form method="post" action="store.php">
-                    <fieldset>
-                    <div class="form-group">
-                        <label for="user_fullname">Full Name</label>
-                        <input type="text"
-                               class="form-control"
-                               id="user_fullname"
-                               name="full_name"
-                               value=""
-                               aria-describedby="titleHelp"
-                               placeholder="Enter yor Full Name">
+            <div class="col-sm-6">
+                <h1 class="text-center">Add New</h1>
+                <form method="post" action="store.php" enctype="multipart/form-data">
+                    <div class="mb-3 row">
+                        <label for="title" class="col-sm-2 col-form-label">Title:</label>
+                        <div class="col-sm-10">
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    id="title"
+                                    name="title"
+                                    value="">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="user_username">User Name</label>
-                        <input type="text"
-                               class="form-control"
-                               id="user_username"
-                               name="user_name"
-                               value=""
-                               aria-describedby="titleHelp"
-                               placeholder="Enter yor User Name">
+                    <div class="mb-3 row">
+                        <label for="detail" class="col-sm-2 col-form-label">Detail:</label>
+                        <div class="col-sm-10">
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    id="detail"
+                                    name="detail"
+                                    value="">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="user_mail">Email</label>
-                        <input type="email"
-                               class="form-control"
-                               id="user_mail"
-                               name="mail"
-                               value=""
-                               aria-describedby="titleHelp"
-                               placeholder="Enter Your E-mail">
+                    <div class="mb-3 row">
+                        <label for="formFile" class="col-form-label col-sm-2">Picture</label>
+                        <div class="col-sm-10">
+                            <input
+                                    class="form-control"
+                                    type="file"
+                                    id="formFile"
+                                    name="picture"
+                                    value="">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="user_mob">Mobile Number</label>
-                        <input type="text"
-                               class="form-control"
-                               id="user_mob"
-                               name="mobile"
-                               value=""
-                               aria-describedby="titleHelp"
-                               placeholder="Enter your phone">
+                    <div class="mb-3 row form-check">
+                        <div class="col-sm-6">
+                            <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                    id="is-active"
+                                    name="is_active"
+                                    value="1">
+                        </div>
+                        <label for="is-active" class="col-sm-6 form-check-label">Is Active:</label>
                     </div>
-                    <div class="form-group">
-                        <label for="user_pass">Password</label>
-                        <input type="password"
-                               class="form-control"
-                               id="user_pass"
-                               name="pass"
-                               value=""
-                               aria-describedby="titleHelp"
-                               placeholder="Enter Your Password">
-                    </div>
-                      <button type="submit" class="btn btn-info">Submit</button>
-                    </fieldset>
-                </form>
 
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
         </div>
     </div>
@@ -92,7 +87,3 @@
 -->
 </body>
 </html>
-
-
-
-

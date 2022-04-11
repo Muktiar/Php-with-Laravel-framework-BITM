@@ -10,12 +10,13 @@ $banners = $_banner->getActiveBanners();
 <section id="mainCarousel">
     <div id="carouselExampleFade" class="carousel slide " data-bs-ride="carousel">
         <div class="carousel-inner">
-            <?php
-            $_active = "active";
-            foreach ($banners as $banner):
-            ?>
+
 
             <div class="carousel-item <?=$_active;?>">
+                <?php
+                $_active = "active";
+                foreach ($banners as $banner):
+                ?>
                 <a href="./product-details.html" target="_blank" rel="noopener noreferrer">
                     <img src="<?=$webroot?>uploads/<?=$banner['picture'];?>" class="d-block w-100" alt="...">
                 </a>
@@ -48,12 +49,13 @@ $banners = $_banner->getActiveBanners();
                         </a>
                     </div>
                 </div>
+                    <?php
+                    $_active = '';
+                endforeach;
+                ?>
             </div>
 
-            <?php
-            $_active = '';
-            endforeach;
-            ?>
+
 
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
